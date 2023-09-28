@@ -1,0 +1,32 @@
+@import "breakpoint-sass/stylesheets/breakpoint";
+
+// A basic reset
+@import "fonts";
+@import "reset";
+
+// Collection of mixins
+@import "mixins";
+/* ---------------------- */
+
+// Variables
+// Breakpoints, colors font-sizes
+@import "variables";
+
+@import "base";
+
+
+
+/* ----------------------Style Blocks */
+
+@import "basic-animations";
+@import "header";
+@import "side-menu";
+@import "card-container";
+@import "card";
+@import "modal";
+@import "modal";
+@import "footer";
+
+
+// @import "jitul";
+// @import "sakib";

@@ -1,0 +1,389 @@
+/* ------------------------------------------- */
+/* -- Placeholders */
+/* ------------------------------------------- */
+
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+%wrapper {
+  max-width: $site-width;
+  margin: 0 auto;
+  position: relative;
+  padding-left: toRem(20);
+  padding-right: toRem(20);
+  @extend %clearfix;
+}
+
+%holder {
+  max-width: $site-width + px;
+  margin: 0 auto;
+  position: relative;
+  @extend %clearfix;
+
+  @include breakpoint(1300px) {
+    max-width: $site-width + px;
+  }
+}
+
+%naked-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+%button {
+  background-color: transparent;
+  border: 1px solid $color--red;
+  border-radius: 3px;
+  color: $color--white;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: $font--main;
+  font-size: toRem(12);
+  font-weight: 500;
+  letter-spacing: 0.07em;
+  line-height: 126%;
+  overflow: hidden;
+  text-decoration: none;
+  padding: toRem(12) toRem(15) toRem(12) toRem(20);
+  position: relative;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $color--white;
+    color: $color--red;
+  }
+}
+
+.btn {
+  @extend %button;
+}
+
+.text-center {
+  .btn--load {
+    margin: 0 auto;
+  }
+}
+
+//----------------------------------
+
+* {
+  box-sizing: border-box;
+}
+
+.chromeframe {
+  position: absolute;
+  top: 0;
+  padding: 20px;
+  background: #fff;
+  color: #666;
+}
+
+@-webkit-viewport {
+  width: device-width;
+}
+@-moz-viewport {
+  width: device-width;
+}
+@-ms-viewport {
+  width: device-width;
+}
+@-o-viewport {
+  width: device-width;
+}
+@viewport {
+  width: device-width;
+}
+
+/* -------------------------------------------------------------------------------*/
+
+/* Basics + Fonts
+---------------------------------- */
+html {
+  margin-top: 0;
+  overflow: unset;
+}
+
+body {
+  // background-color: $color--body-bg;
+  color: $color--body-copy;
+  display: flex;
+  font-family: $font--main;
+  font-weight: 400;
+  flex-direction: column;
+  margin: 0;
+  min-height: 500vh;
+  padding: 0;
+  overflow: unset;
+
+  @include breakpoint(max-width $breakpoint--main - 1px) {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+img {
+  backface-visibility: hidden;
+  height: auto;
+  max-width: 100%;
+}
+
+ul,
+ol {
+  padding-left: toRem(20);
+}
+
+p,
+ul,
+ol {
+  color: rgba($color--body-copy, 0.8);
+  font-family: $font--main;
+  font-size: toRem(14);
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  line-height: 182%;
+  margin: 0;
+
+  a {
+    color: $color--red;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  strong {
+    font-weight: 500;
+  }
+
+  @include breakpoint($breakpoint--main + 0px) {
+    font-size: toRem(15);
+  }
+
+  + p,
+  + ul,
+  + ol {
+    margin-top: toRem(24);
+
+    @include breakpoint($breakpoint--main + 0px) {
+      margin-top: toRem(24);
+    }
+  }
+}
+
+.holder {
+  @extend %holder;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  @include breakpoint($breakpoint--main + 0px) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+/* Headers / Titles
+================================= */
+h1,
+h2,
+h3,
+h4 {
+  line-height: 120%;
+}
+
+h1,
+h3 {
+  font-weight: 400;
+}
+
+h2,
+h4 {
+  font-weight: 300;
+}
+h1 {
+  font-size: toRem(40);
+
+  @include breakpoint($breakpoint--main + 0px) {
+    font-size: toRem(60);
+  }
+}
+h2 {
+  @include breakpoint($breakpoint--main + 0px) {
+    font-size: toRem(40);
+  }
+}
+
+h3 {
+  font-size: toRem(30);
+
+  @include breakpoint($breakpoint--main + 0px) {
+    font-size: toRem(35);
+  }
+}
+h4 {
+  font-size: toRem(20);
+
+  @include breakpoint($breakpoint--main + 0px) {
+    font-size: toRem(24);
+  }
+}
+
+input,
+button {
+  &:focus {
+    outline: none;
+  }
+}
+
+/* ---------- */
+
+/* Links
+================================= */
+
+a {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+}
+a:focus {
+  outline: none;
+}
+
+/* ---------- */
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  appearance: none;
+}
+
+// main wrapper
+.main--wrapper {
+  flex: 1 0 auto;
+  overflow: hidden;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: toRem(-10);
+  margin-left: toRem(-10);
+
+  > * {
+    padding-left: toRem(10);
+    padding-right: toRem(10);
+  }
+}
+
+/****************************************************
+    Input Style
+*****************************************************/
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="tel"],
+input[type="search"],
+input[type="password"],
+input[type="file"],
+select,
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: 48px;
+  color: $color--body-copy;
+  font-weight: 400;
+  font-size: toRem(14);
+  line-height: 2.08955223880597;
+  font-family: $font--main;
+  box-shadow: none;
+  padding: toRem(18) toRem(16);
+  background: rgba(#e6e7e8, 0.6);
+  border: 1px solid $color--white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+
+  @include breakpoint($breakpoint--main + 0px) {
+    height: 56px;
+    font-size: toRem(15);
+    padding: toRem(22) toRem(20);
+  }
+
+  &::-webkit-input-placeholder {
+    color: rgba(72, 72, 72, 0.3);
+    font-weight: 400;
+    line-height: 2.08955223880597;
+    font-family: $font--main;
+    font-size: toRem(14);
+    @include breakpoint($breakpoint--main + 0px) {
+      font-size: toRem(15);
+    }
+  }
+  &::-moz-placeholder {
+    color: rgba(72, 72, 72, 0.3);
+    font-weight: 400;
+    line-height: 2.08955223880597;
+    font-family: $font--main;
+    font-size: toRem(14);
+    @include breakpoint($breakpoint--main + 0px) {
+      font-size: toRem(15);
+    }
+  }
+  &:-ms-input-placeholder {
+    color: rgba(72, 72, 72, 0.3);
+    font-weight: 400;
+    line-height: 2.08955223880597;
+    font-family: $font--main;
+    font-size: toRem(14);
+    @include breakpoint($breakpoint--main + 0px) {
+      font-size: toRem(15);
+    }
+  }
+  &:-moz-placeholder {
+    color: rgba(72, 72, 72, 0.3);
+    font-weight: 400;
+    line-height: 2.08955223880597;
+    font-family: $font--main;
+    font-size: toRem(14);
+    @include breakpoint($breakpoint--main + 0px) {
+      font-size: toRem(15);
+    }
+  }
+
+  &:hover,
+  &:focus {
+    outline: 0;
+  }
+}
+
+.visible--mobile {
+  display: block;
+
+  @include breakpoint($breakpoint--main + 0px) {
+    display: none;
+  }
+}
+
+.visible--desktop {
+  display: block;
+
+  @include breakpoint(max-width $breakpoint--main - 1px) {
+    display: none;
+  }
+}

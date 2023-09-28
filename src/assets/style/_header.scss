@@ -1,0 +1,29 @@
+.floating-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
+  &.hidden {
+    transform: translateY(-100%);
+  }
+  .left-section {
+    display: flex;
+    align-items: center;
+  }
+  .right-section {
+    display: flex;
+    align-items: center;
+  }
+  .logo {
+    font-weight: bold;
+    font-size: 24px;
+  }
+}
