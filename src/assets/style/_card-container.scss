@@ -1,0 +1,7 @@
+// user-row
+.user-row {
+  @extend %d-flex;
+  margin-left: toRem(-10);
+  margin-right: toRem(-10);
+  margin-bottom: toRem(-20);
+}

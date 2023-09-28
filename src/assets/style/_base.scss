@@ -37,17 +37,17 @@
 }
 
 %button {
-  background-color: transparent;
-  border: 1px solid $color--red;
-  border-radius: 3px;
-  color: $color--white;
+  background-color: $color--red;
+  border: 2px solid $color--red;
+  border-radius: 100px;
+  color: $color--body-bg;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
   font-family: $font--main;
   font-size: toRem(12);
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.07em;
   line-height: 126%;
   overflow: hidden;
@@ -56,13 +56,30 @@
   position: relative;
   transition: all 0.3s ease-in-out;
 
+  svg {
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+    * {
+      fill: $color--body-bg;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
   &:hover {
-    background-color: $color--white;
+    background-color: $color--body-bg;
     color: $color--red;
+
+    svg {
+      * {
+        fill: $color--red;
+      }
+    }
   }
 }
 
-.btn {
+.primaryBtn,
+button.primaryBtn {
   @extend %button;
 }
 
@@ -112,7 +129,6 @@ html {
 }
 
 body {
-  // background-color: $color--body-bg;
   color: $color--body-copy;
   display: flex;
   font-family: $font--main;
@@ -122,7 +138,7 @@ body {
   min-height: 500vh;
   padding: 0;
   overflow: unset;
-
+  background-color: rgb(203 203 203);
   @include breakpoint(max-width $breakpoint--main - 1px) {
     -webkit-overflow-scrolling: touch;
   }
@@ -309,10 +325,10 @@ textarea {
   line-height: 2.08955223880597;
   font-family: $font--main;
   box-shadow: none;
-  padding: toRem(18) toRem(16);
+  padding: toRem(18) toRem(16) toRem(18) toRem(40);
   background: rgba(#e6e7e8, 0.6);
   border: 1px solid $color--white;
-  border-radius: 2px;
+  border-radius: toRem(50);
   transition: all 0.3s ease;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
@@ -322,7 +338,7 @@ textarea {
   @include breakpoint($breakpoint--main + 0px) {
     height: 56px;
     font-size: toRem(15);
-    padding: toRem(22) toRem(20);
+    padding: toRem(18) toRem(16) toRem(18) toRem(40);
   }
 
   &::-webkit-input-placeholder {

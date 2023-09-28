@@ -14,19 +14,18 @@
 
 @import "base";
 
-
-
 /* ----------------------Style Blocks */
 
-@import "basic-animations";
 @import "header";
 @import "side-menu";
 @import "card-container";
 @import "card";
 @import "modal";
-@import "modal";
+@import "form";
+@import "blocks";
+@import "loading";
+@import "_error-message";
 @import "footer";
-
 
 // @import "jitul";
 // @import "sakib";

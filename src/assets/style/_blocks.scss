@@ -1,0 +1,79 @@
+.page--title {
+  color: $color--body-copy;
+  font-family: $font--main;
+  font-size: toRem(40);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 100.69%;
+  margin: 0;
+
+  @include breakpoint($breakpoint--main + 0px) {
+    font-size: toRem(60);
+  }
+}
+
+.block--title {
+  color: $color--body-copy;
+  font-family: $font--main;
+  font-size: toRem(36);
+  margin-bottom: toRem(36);
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 0.9px;
+
+  @include breakpoint($breakpoint--main + 0px) {
+    font-size: toRem(45);
+  }
+}
+
+.section--title {
+  @extend .block--title;
+  position: relative;
+}
+
+.title--block {
+  @extend %d-flex;
+  align-items: center;
+  margin-left: toRem(-20);
+  margin-right: toRem(-20);
+  margin-bottom: toRem(24);
+
+  @include breakpoint($breakpoint--main + 0px) {
+    margin-bottom: toRem(50);
+  }
+
+  > div {
+    @include flex(100%);
+    padding-left: toRem(20);
+    padding-right: toRem(20);
+
+    @include breakpoint($breakpoint--main + 0px) {
+      @include flex(50%);
+    }
+  }
+
+  &__filter {
+    margin-top: toRem(30);
+
+    @include breakpoint($breakpoint--main + 0px) {
+      margin-top: 0;
+    }
+  }
+
+  .section--title {
+    margin-bottom: 0;
+  }
+
+  &__cta {
+    text-align: right;
+  }
+}
+
+.content-block {
+  @include cont-padding;
+}
+
+.page--title {
+  text-align: center;
+}

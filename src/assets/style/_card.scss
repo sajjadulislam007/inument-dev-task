@@ -1,0 +1,111 @@
+.user--item-wrap {
+  @include flex(100%);
+  padding-left: toRem(10);
+  padding-right: toRem(10);
+  margin-bottom: toRem(20);
+  transition: all 0.3s ease-in-out;
+  @include breakpoint($breakpoint--main + 0px) {
+    @include flex(33.33%);
+  }
+
+  &:hover {
+    transform: rotate(1deg);
+  }
+
+  .user--item {
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    background-color: $color--body-bg;
+    border-radius: 3px;
+
+    .user-item__body {
+      padding: toRem(20);
+      p {
+        + p {
+          margin-top: toRem(10);
+        }
+      }
+
+      &_title {
+        font-size: toRem(20);
+        font-weight: 700;
+        color: $color--body-copy;
+      }
+      &_mob {
+        font-size: toRem(18);
+        color: $color--body-copy;
+        span {
+          font-weight: 700;
+        }
+      }
+      &_email {
+        font-size: toRem(18);
+        color: $color--body-copy;
+        span {
+          font-weight: 700;
+        }
+      }
+      &_pass {
+        font-size: toRem(18);
+        color: $color--body-copy;
+        span {
+          font-weight: 700;
+        }
+      }
+    }
+
+    &__footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: toRem(20);
+      padding: toRem(20);
+      border-top: 1px solid rgba(77, 84, 90, 0.1);
+
+      .cng-pass {
+        color: $color--red;
+        font-weight: bold;
+      }
+
+      .actions {
+        .edit,
+        .delete {
+          width: 30px;
+          height: 30px;
+          background-color: transparent;
+          border: 0;
+          outline: 0;
+          cursor: pointer;
+
+          svg {
+            width: 20px;
+            height: 20px;
+            * {
+              transition: all 0.3s ease-in-out;
+            }
+          }
+        }
+
+        .edit {
+          &:hover {
+            svg {
+              * {
+                fill: lightseagreen;
+              }
+            }
+          }
+        }
+        .delete {
+          margin-left: toRem(25);
+
+          &:hover {
+            svg {
+              * {
+                fill: $color--red;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

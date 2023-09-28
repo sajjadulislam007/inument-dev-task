@@ -1,34 +1,132 @@
 .sidebar {
-  width: 200px;
+  display: flex;
+  flex-direction: column;
+  width: 220px;
   height: 100%;
   position: fixed;
   top: 0;
   transform: translateX(-100%);
-  background-color: #333;
+  background-color: $color--body-bg;
   overflow-x: hidden;
   transition: 0.3s;
   &.open {
     transform: translateX(0);
     z-index: 1001;
   }
+
+  .logo {
+    padding: toRem(20);
+    margin-bottom: toRem(60);
+    text-align: center;
+  }
 }
-.toggle-button {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  background-color: #333;
-  color: #fff;
+.nemu--container {
+  + .nemu--container {
+    margin-top: toRem(50);
+  }
+  &__title {
+    padding: toRem(15) toRem(30);
+    font-size: toRem(18);
+    color: $color--body-copy;
+  }
+
+  &__menuItems {
+    list-style: none;
+    padding: 0;
+
+    li {
+      padding-right: toRem(20);
+      &.active {
+        a {
+          color: $color--red;
+          background: rgba($color: $color--red, $alpha: 0.2);
+
+          span {
+            svg {
+              * {
+                fill: $color--red;
+              }
+            }
+          }
+        }
+      }
+
+      + li {
+        margin-top: toRem(15);
+      }
+
+      a {
+        display: flex;
+        align-items: center;
+        padding: toRem(15) toRem(30);
+        border-radius: 0 50px 50px 0;
+        transition: all 0.3s ease-in-out;
+        text-decoration: none;
+        font-weight: bold;
+        color: $color--black;
+
+        span {
+          width: 24px;
+          height: 24px;
+          margin-right: toRem(10);
+
+          svg {
+            width: 100%;
+            height: 100%;
+
+            * {
+              fill: $color--black;
+            }
+          }
+        }
+
+        &:hover {
+          background: rgba($color: $color--red, $alpha: 0.3);
+        }
+      }
+    }
+  }
+}
+
+.close {
+  width: 40px;
+  height: 40px;
+  background: transparent;
   border: none;
-  padding: 10px;
+  outline: none;
+  transform: rotate(-180deg);
+  margin: auto toRem(20) toRem(20) auto;
+  border-radius: 500px;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
   cursor: pointer;
-  z-index: 2;
+
+  svg {
+    width: 28px;
+    height: 28px;
+    * {
+      fill: #b9b5b5;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  &:hover {
+    svg {
+      * {
+        fill: rgba($color: $color--red, $alpha: 0.6);
+      }
+    }
+  }
 }
-.menu-items {
-  list-style: none;
-  padding: 0;
-  li {
-    padding: 10px;
-    color: #fff;
-    border-bottom: 1px solid #555;
+
+.overlay {
+  &.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 9999;
+    transition: all 0.3s ease-in-out;
   }
 }

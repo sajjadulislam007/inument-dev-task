@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
-const CardContainer = () => {
-  return (
-    <div>CardContainer</div>
-  )
-}
+const CardContainer = ({ children }) => {
+  return <div className="user-row">{children}</div>;
+};
 
-export default CardContainer
+export default CardContainer;

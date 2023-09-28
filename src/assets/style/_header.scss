@@ -6,24 +6,140 @@
   background-color: #fff;
   border-bottom: 1px solid #ccc;
   padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   transition: transform 0.3s ease-in-out;
   z-index: 1000;
   &.hidden {
     transform: translateY(-100%);
   }
-  .left-section {
+
+  .holder {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 60px;
+  }
+}
+
+.left-section {
+  flex: 0 0 50%;
+  max-width: 50%;
+  width: 100%;
+  display: flex;
+
+  .left-content {
     display: flex;
     align-items: center;
+    margin-right: auto;
+
+    .toggle-menu {
+      background-color: transparent;
+      border: 0;
+      cursor: pointer;
+      height: 35px;
+      outline: 0;
+      margin-right: toRem(24);
+      padding: 0;
+      position: relative;
+      width: 32px;
+      z-index: 991;
+      transition: all 0.3s ease-in-out;
+
+      &.active {
+        opacity: 0;
+        i {
+          position: relative;
+
+          &:nth-child(1) {
+            top: 9px;
+            transform: rotate(45deg);
+          }
+          &:nth-child(2) {
+            opacity: 0;
+          }
+          &:nth-child(3) {
+            top: -9px;
+            transform: rotate(-45deg);
+          }
+        }
+      }
+
+      i {
+        background-color: #555;
+        display: block;
+        height: 2px;
+        width: 100%;
+        transition: all 0.3s ease;
+
+        + i {
+          margin-top: toRem(7);
+        }
+      }
+    }
   }
-  .right-section {
+}
+.right-section {
+  flex: 0 0 50%;
+  max-width: 50%;
+  width: 100%;
+  display: flex;
+
+  .right-content {
     display: flex;
     align-items: center;
+    margin-left: auto;
+    .notification-icon {
+      width: 24px;
+      height: 24px;
+      margin-right: 30px;
+    }
+
+    .user {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .title {
+        display: flex;
+        flex-direction: column;
+        .greet {
+          color: $color--body-copy;
+          font-size: toRem(14);
+        }
+
+        a {
+          color: $color--body-copy;
+          font-size: toRem(16);
+          transition: all 0.3s ease-in-out;
+          font-weight: 700;
+
+          &:hover {
+            color: $color--red;
+          }
+        }
+      }
+
+      .user-icon {
+        width: 20px;
+        height: 20px;
+        margin-left: toRem(10);
+      }
+    }
   }
-  .logo {
-    font-weight: bold;
-    font-size: 24px;
+}
+
+.logo {
+  &.active {
+    a {
+      opacity: 0;
+    }
+  }
+  a {
+    text-align: center;
+    font-size: 30px;
+    background: -webkit-linear-gradient($color--1, $color--red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
   }
 }

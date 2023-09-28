@@ -1,0 +1,51 @@
+.mainForm {
+  form {
+    .form-group {
+      position: relative;
+
+      + .form-group {
+        margin-top: 20px;
+      }
+      label {
+        font-weight: 600;
+
+        &.error {
+          color: $color--red;
+        }
+      }
+      span.icon {
+        width: 18px;
+        height: 18px;
+        position: absolute;
+        left: 15px;
+        top: 72%;
+        transform: translateY(-72%);
+
+        svg {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .form-control {
+        margin-top: 10px;
+      }
+    }
+
+    .primaryBtn {
+      &.disabled {
+        opacity: 0.5;
+        pointer-events: none;
+
+        &:hover {
+          background-color: $color--red;
+          color: #f7f7f7;
+        }
+      }
+      margin-top: toRem(20);
+      display: block;
+      width: 100%;
+      font-size: toRem(18);
+    }
+  }
+}
