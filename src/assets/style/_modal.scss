@@ -6,6 +6,7 @@
   z-index: 9999;
   max-width: 600px;
   width: 100%;
+  padding: 0 toRem(20);
 }
 
 .modal-overlay {
@@ -22,9 +23,13 @@
 
 .modal-content-inner {
   width: 100%;
-  padding: 30px;
+  padding: toRem(20) toRem(15);
   background: #fff;
   border-radius: 10px;
+
+  @include breakpoint($breakpoint--main + 0px) {
+    padding: toRem(30);
+  }
 }
 
 .modal-body {
@@ -79,5 +84,25 @@
 
   .bar2 {
     transform: rotate(-45deg);
+  }
+}
+
+.thank-you-message {
+  text-align: center;
+
+  h2 {
+    font-size: toRem(18);
+    color: green;
+    margin-bottom: toRem(30);
+
+    @include breakpoint($breakpoint--main + 0px) {
+      font-size: toRem(22);
+    }
+  }
+
+  .primaryBtn {
+    &:hover {
+      background-color: $color--white;
+    }
   }
 }

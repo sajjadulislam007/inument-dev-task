@@ -5,6 +5,9 @@
   margin-bottom: toRem(20);
   transition: all 0.3s ease-in-out;
   @include breakpoint($breakpoint--main + 0px) {
+    @include flex(50%);
+  }
+  @include breakpoint($breakpoint--992 + 0px) {
     @include flex(33.33%);
   }
 
@@ -64,9 +67,14 @@
       .cng-pass {
         color: $color--red;
         font-weight: bold;
+        max-width: 77%;
+        width: 100%;
+        padding-right: toRem(10);
       }
 
       .actions {
+        max-width: 86px;
+        width: 100%;
         .edit,
         .delete {
           width: 30px;

@@ -30,7 +30,7 @@ $baseFontSize: 16;
 }
 
 @mixin cont-padding {
-  padding: toRem(64) 0;
+  padding: toRem(128) 0;
 
   @include breakpoint($breakpoint--main + 0px) {
     padding: toRem(120) 0;

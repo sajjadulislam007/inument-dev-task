@@ -2,7 +2,7 @@ import React from "react";
 
 const ThankYou = ({ setShowThankYou, setshowUserModal }) => {
   return (
-    <>
+    <div className="thank-you-message">
       <h2>A New User Successfully Added!</h2>
       <button
         className="primaryBtn"
@@ -13,7 +13,7 @@ const ThankYou = ({ setShowThankYou, setshowUserModal }) => {
       >
         Close The Modal
       </button>
-    </>
+    </div>
   );
 };
 

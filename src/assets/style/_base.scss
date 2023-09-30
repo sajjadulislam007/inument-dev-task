@@ -67,7 +67,7 @@
   }
 
   &:hover {
-    background-color: $color--body-bg;
+    background-color: rgb(203, 203, 203);
     color: $color--red;
 
     svg {
@@ -135,7 +135,7 @@ body {
   font-weight: 400;
   flex-direction: column;
   margin: 0;
-  min-height: 500vh;
+  min-height: 150vh; // Its just a placehiolder value
   padding: 0;
   overflow: unset;
   background-color: rgb(203 203 203);
@@ -318,7 +318,7 @@ textarea {
   appearance: none;
   display: block;
   width: 100%;
-  height: 48px;
+  height: 45px;
   color: $color--body-copy;
   font-weight: 400;
   font-size: toRem(14);
@@ -336,7 +336,7 @@ textarea {
   -moz-transform: translate3d(0, 0, 0);
 
   @include breakpoint($breakpoint--main + 0px) {
-    height: 56px;
+    height: 45px;
     font-size: toRem(15);
     padding: toRem(18) toRem(16) toRem(18) toRem(40);
   }

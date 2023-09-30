@@ -56,7 +56,7 @@ const useFetch = (url, method = "GET") => {
     };
   }, [url, options, method]);
 
-  return { data, isPending, error, postData };
+  return { data, setData, isPending, error, postData };
 };
 
 export default useFetch;

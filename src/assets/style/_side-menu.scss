@@ -15,9 +15,13 @@
   }
 
   .logo {
-    padding: toRem(20);
+    padding: toRem(17);
     margin-bottom: toRem(60);
     text-align: center;
+
+    a {
+      font-size: toRem(25);
+    }
   }
 }
 .nemu--container {
@@ -36,7 +40,23 @@
 
     li {
       padding-right: toRem(20);
+      position: relative;
+
+      &::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 10px;
+        height: 100%;
+        background-color: transparent;
+        content: "";
+        transition: all 0.2s ease-in-out;
+      }
+
       &.active {
+        &::before {
+          background-color: $color--red;
+        }
         a {
           color: $color--red;
           background: rgba($color: $color--red, $alpha: 0.2);

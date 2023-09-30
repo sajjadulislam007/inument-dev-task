@@ -15,7 +15,7 @@
 .block--title {
   color: $color--body-copy;
   font-family: $font--main;
-  font-size: toRem(36);
+  font-size: toRem(34);
   margin-bottom: toRem(36);
   font-style: normal;
   font-weight: 300;
@@ -44,21 +44,9 @@
   }
 
   > div {
-    @include flex(100%);
+    @include flex(50%);
     padding-left: toRem(20);
     padding-right: toRem(20);
-
-    @include breakpoint($breakpoint--main + 0px) {
-      @include flex(50%);
-    }
-  }
-
-  &__filter {
-    margin-top: toRem(30);
-
-    @include breakpoint($breakpoint--main + 0px) {
-      margin-top: 0;
-    }
   }
 
   .section--title {
@@ -76,4 +64,12 @@
 
 .page--title {
   text-align: center;
+}
+
+.text-success {
+  color: green;
+
+  &.text-danger {
+    color: $color--red;
+  }
 }

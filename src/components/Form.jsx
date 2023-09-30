@@ -28,7 +28,7 @@ const Form = ({
   const [isValidRole, setIsValidRole] = useState(true);
   const [isValidPassword, setIsValidPassword] = useState(true);
   const [url, setUrl] = useState("http://localhost:3000/users");
-  const { postData, isPanding, error } = useFetch(url, "POST");
+  const { postData, data, setData, isPanding, error } = useFetch(url, "POST");
 
   //functions
   //input changes
@@ -140,11 +140,28 @@ const Form = ({
   }, [fname, lname, phone, email, role, password]);
 
   //submit form
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setShowThankYou(true);
 
-    postData({ fname, lname, role, mobile: phone, email, password });
+    const formData = {
+      fname,
+      lname,
+      role,
+      mobile: phone,
+      email,
+      password,
+    };
+
+    // Assuming formData holds the data you want to send
+    const response = await postData(formData);
+
+    if (!error) {
+      console.log("Data successfully posted:", response);
+    } else {
+      console.error("Error posting data:", error);
+    }
+
+    setShowThankYou(true);
   };
 
   return (

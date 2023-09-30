@@ -16,6 +16,8 @@ const SideMenu = ({ isSidebarOpen, setIsSidebarOpen, CloseSideBarRef }) => {
           <div className="logo">
             <Link to="/">Your Logo</Link>
           </div>
+          {isLoading && <Loading />}
+          {error && <ErrorMessage message={error} />}
           {data && data.map((menuHeaders) => <MenuContainer key={menuHeaders.id} title={menuHeaders.title} LinkItems={menuHeaders.items} />)}
           <button
             className="close"

@@ -18,7 +18,7 @@ const Nav = ({ setIsSidebarOpen, isSidebarOpen }) => {
     // Calculate and set the initial header height
     updateHeaderHeight();
 
-    console.log(headerHeight);
+    // console.log(headerHeight);
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
 
