@@ -4,7 +4,7 @@ Its a just frontend dev task.
 
 # Inument
 
-[See Demo](https://651886fa11d6345fa2a79939--stirring-piroshki-3098ed.netlify.app/)
+[See Demo](https://inument-dev-task.netlify.app/)
 
 ## Installation instruction
 
