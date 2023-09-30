@@ -4,9 +4,9 @@ Its a just frontend dev task.
 
 # Inument
 
-## Installation instruction
-
 [See Demo](https://651886fa11d6345fa2a79939--stirring-piroshki-3098ed.netlify.app/)
+
+## Installation instruction
 
 - In the project directory, first install the Dependencies by run: `npm install`
 
