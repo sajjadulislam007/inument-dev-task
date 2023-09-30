@@ -6,6 +6,8 @@ Its a just frontend dev task.
 
 ## Installation instruction
 
+[See Demo](https://651886fa11d6345fa2a79939--stirring-piroshki-3098ed.netlify.app/)
+
 - In the project directory, first install the Dependencies by run: `npm install`
 
 - Then please run json-server by: `npm run start-json-server`
