@@ -5,9 +5,6 @@ import Nav from "./components/Nav";
 import SideMenu from "./components/SideMenu";
 import Settings from "./components/pages/Settings";
 import Profile from "./components/pages/Profile";
-import Help from "./components/pages/Help";
-import Forum from "./components/pages/Forum";
-import Contact from "./components/pages/Contact";
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
