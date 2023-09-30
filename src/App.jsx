@@ -35,9 +35,6 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/profile" element={<Profile />} />
-        <Route path="/help" element={<Help />} />
-        <Route path="/forum-support" element={<Forum />} />
-        <Route path="/contact" element={<Contact />} />
       </Routes>
     </>
   );
